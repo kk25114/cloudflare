@@ -34,7 +34,7 @@ async function submit(key) {
       'Authorization': `Bearer ${key}`
     }
     // 查是否订阅
-    // const subscription = await fetch("https://testapi.kk25114.xyz/v1/dashboard/billing/subscription", {
+    // const subscription = await fetch("https://zhangxiaobin.kk25114.xyz/v1/dashboard/billing/subscription", {
     const subscription = await fetch("/api/v1/dashboard/billing/subscription", {
       method: 'get',
       headers: headers
@@ -52,7 +52,7 @@ async function submit(key) {
       const startDate = new Date(endDate - 90 * 24 * 60 * 60);
       console.log(formatDate(endDate, "YYYY-MM-DD"));
       console.log(formatDate(startDate, "YYYY-MM-DD"));
-      // const response = await fetch(`https://testapi.kk25114.xyz/v1/dashboard/billing/usage?start_date=${formatDate(startDate, "YYYY-MM-DD")}&end_date=${formatDate(endDate, "YYYY-MM-DD")}`, {
+      // const response = await fetch(`https://zhangxiaobin.kk25114.xyz/v1/dashboard/billing/usage?start_date=${formatDate(startDate, "YYYY-MM-DD")}&end_date=${formatDate(endDate, "YYYY-MM-DD")}`, {
       const response = await fetch(`/api/v1/dashboard/billing/usage?start_date=${formatDate(startDate, "YYYY-MM-DD")}&end_date=${formatDate(endDate, "YYYY-MM-DD")}`, {
         method: 'get',
         headers: headers
